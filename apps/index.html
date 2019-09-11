@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chatApp">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sufiyan's E-noticeboard</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+
+      
+
+   <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+
+   <script>
+
+     // Initialize Firebase
+
+     var config = {
+
+       apiKey: "AIzaSyCXWc28ChDXdnJgFvGx6x3kuLBafgno6Rc",
+
+       authDomain: "z-chat-e2de2.firebaseapp.com",
+
+       databaseURL: "https://z-chat-e2de2.firebaseio.com",
+
+       projectId: "z-chat-e2de2",
+
+       storageBucket: "z-chat-e2de2.appspot.com",
+
+       messagingSenderId: "91070437991"
+
+     };
+
+     firebase.initializeApp(config);
+
+   </script>
+
+      
+
+       <script src="app.js"></script>
+
+       <script src="angular.js"></script>
+
+</head>
+
+<body ng-controller="ChatController">
+
+  <form>
+  <h1>E-Noticeboard</h1>
+  <div class="inset">
+    <details ng-repeat="m in messages | orderBy: '-date'">
+    <summary>{{m.title}} <br>{{m.date | date:'medium'}}</summary>
+  		<p><strong>DIVISION:</strong>{{m.division}}</p>
+      <p><strong>MESSAGE:</strong>{{m.message}}</p>
+  		<p><strong>SENDBY:</strong>{{m.sendby}}</p>
+      <br>
+    </details>
+  	</div>
+    <div class="footer">
+      <h4>©2019 Shaikh Sufiyan - All Right Reserved </h4>
+    </div>
+  </form>
+
+      <script src='https://use.fontawesome.com/765b633532.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+<link rel="stylesheet" href="css/style.css">
+
+
+</body>
+
+</html>
